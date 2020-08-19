@@ -4,13 +4,14 @@ require('dotenv').config({
 })
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `الإقتصاد بالفلاقي`,
+    description: `متابعة لأهم تطورات الإقتصاد التونسي و العالمي بالفلاقي`,
+    author: `@َAminsid2`,
   },
   plugins: [
     `gatsby-plugin-typescript`,
     // `gatsby-plugin-styled-components`,
+    `gatsby-plugin-material-ui`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -24,13 +25,27 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
+        name: ``,
         short_name: `starter`,
         start_url: `/`,
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+      },
+    },
+    {
+      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      options: {
+        fonts: [
+          {
+            family: `Tajawal`,
+            variants: [`200`, `300`, `400`, `500`, `700`, `800`, `900`],
+          },
+          {
+            family: `Open Sans`,
+          },
+        ],
       },
     },
     // {

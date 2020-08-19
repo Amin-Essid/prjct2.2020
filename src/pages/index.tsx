@@ -1,7 +1,9 @@
 import * as React from "react";
-import { Link, graphql } from "gatsby";
-// import Layout from "../components/layout"
-// import SEO from "../components/seo"
+import { graphql } from "gatsby";
+import Layout from "../components/Layout";
+import SEO from "../components/Seo";
+import Hero from "../components/Hero";
+import Btounsi from "../components/Btounsi";
 
 type Props = {
     data: {
@@ -18,22 +20,25 @@ type Props = {
           childContentfulPostArticleTextNode: {
             article: string;
           };
-        }
+        }[];
       }
     }
 }
 
 const IndexPage: React.FC<Props> = ({data}) => {
-  const posts: {
-    allContentfulPost: {nodes: any}
+  const {
+    allContentfulPost: {nodes: posts}
   } = data
-  // <Layout>
-  //   <SEO title="Home" />
   console.log(posts)
   return (
-    <h1>Hello world</h1>
+    <Layout>
+    <SEO title="Home" />
+    <div style={{paddingBottom: "66px"}}>
+      <Hero post={posts[0]}/>
+      <Btounsi/>
+    </div>
+    </Layout>
   )
-  // </Layout>
 }
 
 export default IndexPage

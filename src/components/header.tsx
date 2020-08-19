@@ -1,42 +1,68 @@
 // import { Link } from "gatsby"
-// import PropTypes from "prop-types"
-// import React from "react"
+import React from "react";
+import { Link, useStaticQuery, graphql } from "gatsby";
+import Image from "gatsby-image";
+import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import Button from '@material-ui/core/Button';
+import IconButton from '@material-ui/core/IconButton';
+import FacebookIcon from '@material-ui/icons/Facebook';
 
-// const Header = ({ siteTitle }) => (
-//   <header
-//     style={{
-//       background: `rebeccapurple`,
-//       marginBottom: `1.45rem`,
-//     }}
-//   >
-//     <div
-//       style={{
-//         margin: `0 auto`,
-//         maxWidth: 960,
-//         padding: `1.45rem 1.0875rem`,
-//       }}
-//     >
-//       <h1 style={{ margin: 0 }}>
-//         <Link
-//           to="/"
-//           style={{
-//             color: `white`,
-//             textDecoration: `none`,
-//           }}
-//         >
-//           {siteTitle}
-//         </Link>
-//       </h1>
-//     </div>
-//   </header>
-// )
+type Logo = {
+            logo: { 
+                nodes: {  
+                    childImageSharp: {
+                    fixed: any;
+            }}[];
+    }
+}
 
-// Header.propTypes = {
-//   siteTitle: PropTypes.string,
-// }
+const useStyles = makeStyles((theme: Theme) =>
+  createStyles({
+    root: {
+      flexGrow: 1
+        },
+    menuButton: {
+      marginRight: theme.spacing(2),
+    },
+    title: {
+      flexGrow: 1,
+    },
+  }),
+);
 
-// Header.defaultProps = {
-//   siteTitle: ``,
-// }
+const Header: React.FC = () => {
+    const {logo} = useStaticQuery<Logo>(graphql`
+    {
+      logo: allFile(filter: {relativeDirectory: {eq: "logo"}}) {
+        nodes {
+          childImageSharp {
+            fixed {
+                ...GatsbyImageSharpFixed 
+            }
+          }
+        }
+      }
+    }
+  `)
+    const classes = useStyles();
+    return (
+      <div className={classes.root}>
+        <AppBar elevation={0} style={{backgroundColor: "white"}} position="static">
+          <Toolbar className="toolbar">
+            <IconButton edge="start" className={classes.menuButton} color="inherit">
+              <FacebookIcon style={{color: '#276ac6', height: '50px', width: '50px'}} />
+            </IconButton>
+            <Button color="inherit" style={{marginRight:'-8px'}}>
+              <Image fixed={logo.nodes[0].childImageSharp.fixed} />
+            </Button>
+          </Toolbar>
+        </AppBar>
+      </div>
+    );
+  }
 
-// export default Header
+export default Header
+
+
