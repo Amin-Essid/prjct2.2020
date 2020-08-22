@@ -19,9 +19,13 @@ type Props = {
 const Layout: React.FC<Props> = ({ children }) => {
     return (
         <>
-            <Header/>
-            {children}
-            <Footer/>
+            <div className="layout">
+                <Header/>
+                <main>
+                    {children}
+                </main>
+                <Footer/>
+            </div>
         </>
     )
 }

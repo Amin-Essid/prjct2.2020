@@ -8,6 +8,21 @@
   font-family: 'Tajawal', sans-serif;
 }
 
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+.layout{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
 /* *********** header *********** */
 .toolbar {
     /* justifyContent: "space-between", maxWidth: "800px", marginLeft: 'auto', 
@@ -26,7 +41,17 @@
 
 /******** footer ***********/
 .footer {
+    /* position: fixed;
+    left: 0;
+    bottom: 0; */
+    width: 100%;
+    height: auto;
     text-align: center;
+    background-color: #276ac6;
+    padding: 5px;
+    font-family: "Tajawal";
+    font-size: 1rem;
+    color: white;
 }
 
 /******** HERO *********/
@@ -34,7 +59,7 @@
 .hero-section {
     display: flex;
     flex-direction: column;
-    margin: 0 auto 0 auto;
+    margin: 0 auto 20px auto;
     width: 90%;
     max-width: 600px;
     direction: rtl;
@@ -45,7 +70,7 @@
 }
 .hero-title {
     position: relative;
-    margin-top: 20px;
+    margin-top: 10px;
     font-weight: 600;
     font-size: 2.2rem;
     width: 100%;
@@ -77,7 +102,7 @@
 .post {
     display: flex;
     height: auto;
-    width: 350px;
+    width: 320px;
     justify-content: center;
     margin: 1.5em auto 1.5em auto;
 }
@@ -96,7 +121,7 @@
     font-family: 'Tajawal', sans-serif;
     padding-right: .5em;
     font-size: 1.25rem;
-    font-weight: 700;
+    font-weight: 600;
     direction: rtl;
     width: 250px;
 }

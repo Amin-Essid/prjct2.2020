@@ -11,6 +11,7 @@ type Props = {
       allContentfulPost: {
         nodes: {
           title: string;
+          slug: string;
           contentful_id: string;
           mainImage: {
             fluid: any;
@@ -36,15 +37,13 @@ const IndexPage: React.FC<Props> = ({data}) => {
   return (
     <Layout>
     <SEO title="Home" />
-    <div style={{paddingBottom: "66px"}}>
-      <Hero post={posts[0]}/>
-      <Btounsi/>
-      <Articles posts={posts.slice(posts.length-4, posts.length-1)} />
-      <Btounsi/>
-      <Articles posts={posts.slice(posts.length-7, posts.length-4)} />
-      <Btounsi/>
-      <Articles posts={posts.slice(posts.length-10, posts.length-7)} />
-    </div>
+    <Hero post={posts[0]}/>
+    <Btounsi/>
+    <Articles posts={posts.slice(posts.length-4, posts.length-1)} />
+    <Btounsi/>
+    <Articles posts={posts.slice(posts.length-7, posts.length-4)} />
+    <Btounsi/>
+    <Articles posts={posts.slice(posts.length-10, posts.length-7)} />
     </Layout>
   )
 }
@@ -56,6 +55,7 @@ export const query = graphql`
   allContentfulPost {
     nodes {
       title
+      slug
       contentful_id
       mainImage {
         fluid {

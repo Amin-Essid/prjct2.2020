@@ -4,6 +4,7 @@ import Article from './Article';
 type Props = {
     posts: {
         title: string;
+        slug: string;
         contentful_id: string;
         mainImage: {
           fluid: any;

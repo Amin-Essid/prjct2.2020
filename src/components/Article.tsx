@@ -1,21 +1,8 @@
 import React from 'react';
 import Image from 'gatsby-image';
-import { Theme, createStyles, makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
+import {Link} from "gatsby";
 
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    root: {
-      display: 'flex',
-      flexWrap: 'wrap',
-      '& > *': {
-        margin: theme.spacing(1),
-        width: theme.spacing(16),
-        height: theme.spacing(16),
-      },
-    },
-  }),
-);
 
 
 type Props = {
@@ -34,23 +21,25 @@ type Props = {
         smallImage: {
             fluid: any;
         };
+        slug: string;
     }
 }
 
 const Article: React.FC<Props> = ({post}) => {
-    const classes = useStyles();
     console.log(post)
-    const {childContentfulPostArticleTextNode: { article }, childContentfulPostDescriptionTextNode: {description}, smallImage: {fluid : demoImage}, mainImage: {fluid : articleImage}, title, contentful_id } = post
+    const { smallImage: {fluid : demoImage}, title, slug } = post
     return (
         <>
-            <Paper elevation={1} className='post'>
-                <p className="post-title">
-                    {title}
-                </p>
-                <div className="post-img">
-                    <Image fluid={demoImage} /> 
-                </div>
-            </Paper>
+            <Link to={`/${slug}`}>
+                <Paper elevation={2} className='post'>
+                    <p className="post-title">
+                        {title}
+                    </p>
+                    <div className="post-img">
+                        <Image fluid={demoImage} /> 
+                    </div>
+                </Paper>
+            </Link>
         </>
     )
 }
