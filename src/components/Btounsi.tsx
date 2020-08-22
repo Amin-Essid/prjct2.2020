@@ -26,7 +26,6 @@ const Btounsi:React.FC = () => {
       }
     }
   `)
-    console.log(btounsi.nodes[0].childImageSharp.fixed)
   return (
     <div className="btounsi">
         <Image fixed={btounsi.nodes[0].childImageSharp.fixed} />

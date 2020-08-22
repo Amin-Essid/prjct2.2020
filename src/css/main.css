@@ -18,9 +18,9 @@
     margin-right:auto;
 }
 
-@media (min-width: 900px) {
+@media (min-width: 1200px) {
     .toolbar {
-        width:850px;
+        width:1200px;
     }
 }
 
@@ -46,7 +46,7 @@
 .hero-title {
     position: relative;
     margin-top: 20px;
-    font-weight: 700;
+    font-weight: 600;
     font-size: 2.2rem;
     width: 100%;
     padding-right: 1em;
@@ -72,4 +72,31 @@
     display: flex;
     justify-content: center;
     margin: 1em auto 1em auto;
+}
+
+.post {
+    display: flex;
+    height: auto;
+    width: 350px;
+    justify-content: center;
+    margin: 1.5em auto 1.5em auto;
+}
+
+/* .post + .post {
+    margin: .5em auto .5em auto;
+} */
+
+.post-img {
+    flex-shrink: 0;
+    width: 96px;
+    height: 80px;
+}
+
+.post-title {
+    font-family: 'Tajawal', sans-serif;
+    padding-right: .5em;
+    font-size: 1.25rem;
+    font-weight: 700;
+    direction: rtl;
+    width: 250px;
 }
