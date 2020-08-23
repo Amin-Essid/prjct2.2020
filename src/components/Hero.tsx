@@ -4,10 +4,10 @@ import {Link} from "gatsby";
 
 type Props = {
     post: {
-        childContentfulPostArticleTextNode: {
+      article: {
             article: string;
         };
-        childContentfulPostDescriptionTextNode: {
+        description: {
             description: string;
         };
         contentful_id: string;

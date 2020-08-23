@@ -12,10 +12,10 @@ type Props = {
         smallImage: {
           fluid: any;
         };
-        childContentfulPostDescriptionTextNode: {
+        description: {
           description: string;
         };
-        childContentfulPostArticleTextNode: {
+        article: {
           article: string;
         };
       }[];

@@ -4,7 +4,7 @@ import Layout from "../components/Layout";
 import SEO from "../components/Seo";
 import Hero from "../components/Hero";
 import Btounsi from "../components/Btounsi";
-import Articles from "../components/Articles"
+import Articles from "../components/Articles";
 
 type Props = {
     data: {
@@ -19,12 +19,12 @@ type Props = {
           smallImage: {
             fluid: any;
           };
-          childContentfulPostDescriptionTextNode: {
-            description: string;
-          };
-          childContentfulPostArticleTextNode: {
+          article: {
             article: string;
-          };
+          }
+          description: {
+            description: string;
+          }
         }[];
       }
     }
@@ -67,10 +67,10 @@ export const query = graphql`
           ...GatsbyContentfulFluid
         }
       }
-      childContentfulPostDescriptionTextNode {
+      description {
         description
       }
-      childContentfulPostArticleTextNode {
+      article {
         article
       }
     }

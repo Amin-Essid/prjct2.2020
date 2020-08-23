@@ -7,10 +7,10 @@ import {Link} from "gatsby";
 
 type Props = {
     post: {
-        childContentfulPostArticleTextNode: {
+        article: {
             article: string;
         };
-        childContentfulPostDescriptionTextNode: {
+        description: {
             description: string;
         };
         contentful_id: string;
@@ -26,7 +26,6 @@ type Props = {
 }
 
 const Article: React.FC<Props> = ({post}) => {
-    console.log(post)
     const { smallImage: {fluid : demoImage}, title, slug } = post
     return (
         <>
