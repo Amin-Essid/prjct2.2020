@@ -94,18 +94,71 @@ main {
   font-family: 'Tajawal', sans-serif;
 }
 
-.btounsi{
+.btounsi {
     display: flex;
     justify-content: center;
     margin: 1em auto 1em auto;
 }
 
+.smallBtounsi {
+    display: inline-block;
+}
+
+.bigBtounsi {
+    display: none;
+}
+
 .post {
     display: flex;
     height: auto;
-    width: 320px;
-    justify-content: center;
+    width: 95%;
+    max-width: 600px;
+    justify-content: flex-end;
     margin: 1.5em auto 1.5em auto;
+}
+
+.body-btounsi {
+    display: none;
+}
+
+.verticalBtounsi {
+    display: none;
+}
+
+@media (min-width: 600px) {
+    /* .btounsi {
+        display: none;
+    } */
+
+    .verticalBtounsi {
+        display: block;
+    }
+
+    .smallBtounsi {
+        display: none;
+    }
+    
+    .bigBtounsi {
+        display: inline-block;
+       
+    }
+
+    .post {
+
+    }
+    
+    .body-page {
+        display: flex;
+        max-width: 600px;
+        margin: 0 auto 0 auto;
+        flex-direction: column;
+    }
+    .body-content {
+        align-self: flex-end;
+    }
+    .body-btounsi {
+        display: inline-block;
+    }
 }
 
 /* .post + .post {
@@ -124,7 +177,7 @@ main {
     font-size: 1.25rem;
     font-weight: 600;
     direction: rtl;
-    width: 250px;
+    width: auto;
 }
 
 /************* single post/blog ***************/

@@ -5,6 +5,7 @@ import SEO from "../components/Seo";
 import Hero from "../components/Hero";
 import Btounsi from "../components/Btounsi";
 import Articles from "../components/Articles";
+import VerticalBtounsi from "../components/VerticalBtounsi";
 
 type Props = {
     data: {
@@ -38,12 +39,19 @@ const IndexPage: React.FC<Props> = ({data}) => {
     <Layout>
     <SEO title="Home" />
     <Hero post={posts[0]}/>
-    <Btounsi/>
-    <Articles posts={posts.slice(posts.length-4, posts.length-1)} />
-    <Btounsi/>
-    <Articles posts={posts.slice(posts.length-7, posts.length-4)} />
-    <Btounsi/>
-    <Articles posts={posts.slice(posts.length-10, posts.length-7)} />
+    <div className="body-page">
+      {/* <div className="body-btounsi">
+        <VerticalBtounsi/>
+      </div> */}
+      <div className="body-content">
+        <Btounsi/>
+        <Articles posts={posts.slice(posts.length-4, posts.length-1)} />
+        <Btounsi/>
+        <Articles posts={posts.slice(posts.length-7, posts.length-4)} />
+        <Btounsi/>
+        <Articles posts={posts.slice(posts.length-10, posts.length-7)} />
+      </div>
+    </div>
     </Layout>
   )
 }

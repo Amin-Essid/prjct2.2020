@@ -94,6 +94,8 @@ query GetSinglePost($slug: String) {
         }
       }
       title
+      slug
+      contentful_id
     }
   }
 }
