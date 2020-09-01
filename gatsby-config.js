@@ -43,6 +43,14 @@ module.exports = {
             variants: [`200`, `300`, `400`, `500`, `700`, `800`, `900`],
           },
           {
+            family: `Amiri`,
+            variants: [`400`, `700`],
+          },
+          {
+            family: `Mirza`,
+            variants: [`400`, `500`, `600`, `700`],
+          },
+          {
             family: `Open Sans`,
           },
         ],

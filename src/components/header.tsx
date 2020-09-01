@@ -52,14 +52,15 @@ const Header: React.FC = () => {
         <AppBar elevation={0} style={{backgroundColor: "white"}} position="static">
           <Toolbar className="toolbar">
             <a href="https://www.facebook.com/%D8%A7%D9%84%D8%A7%D9%82%D8%AA%D8%B5%D8%A7%D8%AF-%D8%A8%D8%A7%D9%84%D9%81%D9%84%D9%91%D8%A7%D9%82%D9%8A-133076093450347" target="blank">
-            <IconButton edge="start" className={classes.menuButton} color="inherit">
-              <FacebookIcon style={{color: '#276ac6', height: '50px', width: '50px'}} />
-            </IconButton>
+              <IconButton edge="start" className={classes.menuButton} color="inherit">
+                <FacebookIcon style={{color: '#276ac6', height: '50px', width: '50px'}} />
+              </IconButton>
             </a>
+            <h1 style={{fontFamily: 'Amiri', color: 'black', opacity: '0.7', fontSize: '2rem'}}>الإقتصاد بالفلاقي</h1>
             <Link to="/">
-            <Button color="inherit" style={{marginRight:'-8px'}}>
-              <Image fixed={logo.nodes[0].childImageSharp.fixed} />
-            </Button>
+              <Button color="inherit" style={{marginRight:'-8px'}}>
+                <Image fixed={logo.nodes[0].childImageSharp.fixed} />
+              </Button>
             </Link>
           </Toolbar>
         </AppBar>
