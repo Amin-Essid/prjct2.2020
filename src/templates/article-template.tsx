@@ -3,7 +3,7 @@ import Image from "gatsby-image";
 import { graphql} from "gatsby";
 import Layout from "../components/Layout";
 import ReactMarkdown from "react-markdown";
-import SEO from '../components/SEO';
+import Seo from '../components/Seo';
 import Btounsi from "../components/Btounsi";
 import Articles from "../components/Articles";
 
@@ -46,7 +46,7 @@ type Props = {
 const ComponentName:React.FC<Props> = ({data}) => {
   const {artcl, allPosts} = data
 return <Layout>
-  <SEO title={artcl.title} description={artcl.description.description}/>
+  <Seo title={artcl.title} description={artcl.description.description}/>
   <section className="blog-template">
     <div className="blog-img">
       <Image fluid={artcl.mainImage.fluid} />

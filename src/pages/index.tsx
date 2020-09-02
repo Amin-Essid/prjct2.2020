@@ -1,7 +1,7 @@
 import * as React from "react";
 import { graphql } from "gatsby";
 import Layout from "../components/Layout";
-import SEO from "../components/Seo";
+import Seo from "../components/Seo";
 import Hero from "../components/Hero";
 import Btounsi from "../components/Btounsi";
 import Articles from "../components/Articles";
@@ -36,7 +36,7 @@ const IndexPage: React.FC<Props> = ({data}) => {
   } = data
   return (
     <Layout>
-    <SEO title="Home" />
+    <Seo title="Home" />
     <Hero post={posts[0]}/>
     <div className="body-page">
       {/* <div className="body-btounsi">
