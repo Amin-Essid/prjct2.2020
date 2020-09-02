@@ -5,7 +5,6 @@ import SEO from "../components/Seo";
 import Hero from "../components/Hero";
 import Btounsi from "../components/Btounsi";
 import Articles from "../components/Articles";
-import VerticalBtounsi from "../components/VerticalBtounsi";
 
 type Props = {
     data: {
