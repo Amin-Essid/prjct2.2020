@@ -1,4 +1,5 @@
 import * as React from "react";
+import mainLogo from "../images/mainLogo.png";
 import { graphql } from "gatsby";
 import Layout from "../components/Layout";
 import Seo from "../components/Seo";
@@ -15,6 +16,7 @@ type Props = {
           contentful_id: string;
           mainImage: {
             fluid: any;
+            file: any;
           };
           smallImage: {
             fluid: any;
@@ -36,7 +38,7 @@ const IndexPage: React.FC<Props> = ({data}) => {
   } = data
   return (
     <Layout>
-    <Seo title="Home" />
+    <Seo title="الأقتصاد بالفلاقي" image={mainLogo} />
     <Hero post={posts[0]}/>
     <div className="body-page">
       {/* <div className="body-btounsi">
@@ -67,6 +69,9 @@ export const query = graphql`
       mainImage {
         fluid {
           ...GatsbyContentfulFluid
+        }
+        file {
+          url
         }
       }      
       smallImage {

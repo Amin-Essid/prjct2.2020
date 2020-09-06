@@ -18,6 +18,7 @@ type Props = {
         }
         mainImage: {
           fluid: any;
+          file: any;
         }
         title: string;
       }
@@ -46,7 +47,7 @@ type Props = {
 const ComponentName:React.FC<Props> = ({data}) => {
   const {artcl, allPosts} = data
 return <Layout>
-  <Seo title={artcl.title} description={artcl.description.description}/>
+  <Seo title={artcl.title} description={artcl.description.description} image={artcl.mainImage.file}/>
   <section className="blog-template">
     <div className="blog-img">
       <Image fluid={artcl.mainImage.fluid} />
@@ -76,6 +77,9 @@ query GetSinglePost($slug: String) {
     mainImage {
       fluid {
         ...GatsbyContentfulFluid
+      }
+      file {
+          url
       }
     }
     title
