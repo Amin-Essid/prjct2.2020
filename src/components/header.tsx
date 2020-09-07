@@ -55,7 +55,7 @@ const Header: React.FC = () => {
                 <FacebookIcon style={{color: '#276ac6', height: '50px', width: '50px'}} />
               </IconButton>
             </a>
-            <h1 style={{fontFamily: 'Amiri', color: 'black', opacity: '0.7', fontSize: '2rem'}}>الإقتصاد بالفلاقي</h1>
+            <h1 className="header-title">الإقتصاد بالفلاقي</h1>
             <Link to="/">
               <Button color="inherit" style={{marginRight:'-8px'}}>
                 <Image fixed={logo.nodes[0].childImageSharp.fixed} />
