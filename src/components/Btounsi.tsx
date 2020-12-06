@@ -1,40 +1,43 @@
-import React from 'react';
-import Image from 'gatsby-image';
-import { useStaticQuery, graphql } from "gatsby";
+import React from "react"
+import Image from "gatsby-image"
+import { useStaticQuery, graphql } from "gatsby"
 
 type Btounsi = {
-    btounsi: { 
-        nodes: {  
-            childImageSharp: {
-            fixed: any;
-        }}[];
-    };
-    verticalBtounsi: { 
-      nodes: {  
-          childImageSharp: {
-          fixed: any;
-      }}[];
-    }
+  btounsi: {
+    nodes: {
+      childImageSharp: {
+        fixed: any
+      }
+    }[]
+  }
+  verticalBtounsi: {
+    nodes: {
+      childImageSharp: {
+        fixed: any
+      }
+    }[]
+  }
 }
 
-const Btounsi:React.FC = () => {
-
-    const {btounsi, verticalBtounsi} = useStaticQuery<Btounsi>(graphql`
+const Btounsi: React.FC = () => {
+  const { btounsi, verticalBtounsi } = useStaticQuery<Btounsi>(graphql`
     {
-      btounsi:allFile(filter: {relativeDirectory: {eq: "btounsi"}}) {
+      btounsi: allFile(filter: { relativeDirectory: { eq: "btounsi" } }) {
         nodes {
           childImageSharp {
             fixed {
-                ...GatsbyImageSharpFixed
+              ...GatsbyImageSharpFixed
             }
           }
         }
       }
-      verticalBtounsi:allFile(filter: {relativeDirectory: {eq: "verticalBtounsi"}}) {
+      verticalBtounsi: allFile(
+        filter: { relativeDirectory: { eq: "bigBtounsi" } }
+      ) {
         nodes {
           childImageSharp {
             fixed {
-                ...GatsbyImageSharpFixed
+              ...GatsbyImageSharpFixed
             }
           }
         }
@@ -43,7 +46,11 @@ const Btounsi:React.FC = () => {
   `)
   return (
     <div className="btounsi">
-      <a className="smallBtounsi" href="https://www.btounsi.com/" target="blank">
+      <a
+        className="smallBtounsi"
+        href="https://www.btounsi.com/"
+        target="blank"
+      >
         <Image fixed={btounsi.nodes[0].childImageSharp.fixed} />
       </a>
       <a className="bigBtounsi" href="https://www.btounsi.com/" target="blank">
