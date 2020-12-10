@@ -272,12 +272,14 @@ main {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    width: 100%;
+    max-width: 1079px;
   }
   .body-btounsi {
     display: inline-block;
   }
   .post {
-    max-width: 450px;
+    max-width: 525px;
   }
 }
 

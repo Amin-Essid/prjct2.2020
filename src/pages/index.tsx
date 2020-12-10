@@ -6,7 +6,7 @@ import Seo from "../components/Seo"
 import Hero from "../components/Hero"
 import Btounsi from "../components/Btounsi"
 import Articles from "../components/Articles"
-import VerticalBtounsi from "../components/VerticalBtounsi"
+// import VerticalBtounsi from "../components/VerticalBtounsi"
 
 type Props = {
   data: {
@@ -47,9 +47,9 @@ const IndexPage: React.FC<Props> = ({ data }) => {
             <Btounsi />
             <Articles posts={posts.slice(posts.length - 6, posts.length - 2)} />
           </div>
-          <div className="verticalBtounsi">
+          {/* <div className="verticalBtounsi">
             <VerticalBtounsi />
-          </div>
+          </div> */}
           <div>
             <Btounsi />
             <Articles
