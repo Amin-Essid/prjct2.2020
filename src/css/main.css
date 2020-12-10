@@ -216,7 +216,7 @@ main {
   direction: rtl;
   width: auto;
 }
-
+/* desktop */
 @media (min-width: 600px) {
   .verticalBtounsi {
     display: none;
