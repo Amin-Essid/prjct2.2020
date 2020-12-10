@@ -1,26 +1,29 @@
-import React from 'react';
-import Image from 'gatsby-image';
-import { useStaticQuery, graphql } from "gatsby";
+import React from "react"
+import Image from "gatsby-image"
+import { useStaticQuery, graphql } from "gatsby"
 
 type Btounsi = {
-    btounsi: { 
-        nodes: {  
-            childImageSharp: {
-            fixed: any;
-    }}[];
-}
+  btounsi: {
+    nodes: {
+      childImageSharp: {
+        fixed: any
+      }
+    }[]
+  }
 }
 
-const VerticalBtounsi:React.FC = () => {
-    console.log("aasba")
+const VerticalBtounsi: React.FC = () => {
+  console.log("aasba")
 
-    const {btounsi} = useStaticQuery<Btounsi>(graphql`
+  const { btounsi } = useStaticQuery<Btounsi>(graphql`
     {
-      btounsi:allFile(filter: {relativeDirectory: {eq: "verticalBtounsi"}}) {
+      btounsi: allFile(
+        filter: { relativeDirectory: { eq: "verticalBtounsi" } }
+      ) {
         nodes {
           childImageSharp {
             fixed {
-                ...GatsbyImageSharpFixed
+              ...GatsbyImageSharpFixed
             }
           }
         }
@@ -28,7 +31,7 @@ const VerticalBtounsi:React.FC = () => {
     }
   `)
   return (
-    <div className="verticalBtounsi">
+    <div>
       <a href="https://www.btounsi.com/" target="blank">
         <Image fixed={btounsi.nodes[0].childImageSharp.fixed} />
       </a>

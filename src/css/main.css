@@ -256,7 +256,7 @@ main {
   }
 
   .verticalBtounsi {
-    display: flex;
+    display: block;
     margin: auto 0.25rem auto 0.25rem;
   }
 

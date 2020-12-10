@@ -42,15 +42,14 @@ const IndexPage: React.FC<Props> = ({ data }) => {
       <Seo title="الأقتصاد بالفلاقي" image={mainLogo} />
       <Hero post={posts[0]} />
       <div className="body-page">
-        {/* <div className="body-btounsi">
-        <VerticalBtounsi/>
-      </div> */}
         <div className="body-content">
           <div>
             <Btounsi />
             <Articles posts={posts.slice(posts.length - 6, posts.length - 2)} />
           </div>
-          <VerticalBtounsi />
+          <div className="verticalBtounsi">
+            <VerticalBtounsi />
+          </div>
           <div>
             <Btounsi />
             <Articles
