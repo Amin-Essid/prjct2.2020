@@ -6,7 +6,7 @@ type Btounsi = {
   btounsi: {
     nodes: {
       childImageSharp: {
-        fixed: any
+        fluid: any
       }
     }[]
   }
@@ -22,8 +22,8 @@ const VerticalBtounsi: React.FC = () => {
       ) {
         nodes {
           childImageSharp {
-            fixed {
-              ...GatsbyImageSharpFixed
+            fluid {
+              ...GatsbyImageSharpFluid
             }
           }
         }
@@ -31,9 +31,9 @@ const VerticalBtounsi: React.FC = () => {
     }
   `)
   return (
-    <div>
+    <div style={{ width: "125px" }}>
       <a href="https://www.btounsi.com/" target="blank">
-        <Image fixed={btounsi.nodes[0].childImageSharp.fixed} />
+        <Image fluid={btounsi.nodes[0].childImageSharp.fluid} />
       </a>
     </div>
   )
