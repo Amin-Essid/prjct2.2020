@@ -1,6 +1,5 @@
-
-require('dotenv').config({
-  path:`.env.${process.env.NODE_ENV}`,
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
 })
 module.exports = {
   siteMetadata: {
@@ -22,6 +21,7 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-plugin-preload-fonts`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -34,28 +34,18 @@ module.exports = {
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
-    {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
-      options: {
-        fonts: [
-          {
-            family: `Tajawal`,
-            variants: [`200`, `300`, `400`, `500`, `700`, `800`, `900`],
-          },
-          {
-            family: `Amiri`,
-            variants: [`400`, `700`],
-          },
-          {
-            family: `Mirza`,
-            variants: [`400`, `500`, `600`, `700`],
-          },
-          {
-            family: `Open Sans`,
-          },
-        ],
-      },
-    },
+    // {
+    //   resolve: `gatsby-plugin-google-fonts`,
+    //   options: {
+    //     fonts: [
+    //       `Tajawal\:200,300,400,500,700,800,900`,
+    //       `Open Sans`,
+    //       `Amiri\:400,700`,
+    //       `Mirza\:400,500,600,700`,
+    //     ],
+    //     display: "swap",
+    //   },
+    // },
     // {
     //   resolve: `gatsby-source-filesystem`,
     //   options: {
@@ -66,14 +56,13 @@ module.exports = {
     {
       resolve: `gatsby-source-contentful`,
       options: {
-      spaceId: process.env.GATSBY_SPACE_ID,
-      // Learn about environment variables: https://gatsby.dev/env-vars
-      accessToken: process.env.GATSBY_ACCESS_TOKEN,
+        spaceId: process.env.GATSBY_SPACE_ID,
+        // Learn about environment variables: https://gatsby.dev/env-vars
+        accessToken: process.env.GATSBY_ACCESS_TOKEN,
+      },
     },
-  },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
   ],
 }
-
